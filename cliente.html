@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Clientes</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="text-white">
+        <div class="container">
+            <div class="container mt-5">
+                <h2 class="mb-4">Registro de Clientes</h2> 
+                <nav>
+                    <ul class="nav">
+                      <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house" style="color: #ffffff;"></i> Inicio</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-gift" style="color: #ffffff;"></i> Productos</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-phone" style="color: #ffffff;"></i> Contacto</a></li>
+                      <li class="nav-item"><a class="nav-link" href="cliente.html"><i class="fa-solid fa-users" style="color: #ffffff;"></i> Clientes</a></li>
+                    </ul>
+                  </nav>
+        </div>
+      </header>
+
+      <main class="container my-4">
+        <div class="container">
+  <!-- Formulario de Registro -->
+  <form id="clienteForm">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Email" required>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" class="form-control" id="telefono" placeholder="Teléfono" required>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="agregarCliente()">Agregar Cliente</button>
+  </form>
+
+  <!-- Lista de Clientes -->
+  <ul id="listaClientes" class="list-group mt-4">
+    <!-- Los clientes se mostrarán aquí dinámicamente -->
+  </ul>
+</div>
+</div>
+</main>
+
+<footer id="clientefoo">
+    <p>Rodrigo Aguilera, Ángel Árevalo © 2023 LIC</p>
+  </footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="cliente.js" defer></script>
+</body>
+</html>

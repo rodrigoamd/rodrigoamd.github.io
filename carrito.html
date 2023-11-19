@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de la Compra</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="bg-dark text-white">
+    <div class="container">
+      <h1 class="my-4">Detalles de la Compra</h1>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <div class="container">
+      <h2>Productos en el Carrito</h2>
+
+      <ul class="list-group lista-de-productos">
+        <!-- Mostrar productos desde sessionStorage -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const productosEnCarrito = JSON.parse(sessionStorage.getItem("productosEnCarrito")) || [];
+
+            productosEnCarrito.forEach(function (producto) {
+              const itemHTML = `
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>${producto.nombre}</span>
+                  <span class="badge badge-primary badge-pill">$${producto.precio}</span>
+                </li>`;
+              document.querySelector(".lista-de-productos").insertAdjacentHTML("beforeend", itemHTML);
+            });
+
+            // Mostrar el total desde sessionStorage
+            const totalCompra = parseFloat(sessionStorage.getItem("totalCompra")) || 0;
+            document.querySelector(".total").textContent = "Total: $" + totalCompra;
+          });
+        </script>
+      </ul>
+
+      <p class="total mt-3">Total: $0</p>
+
+      <a href="#" class="btn btn-success pagar">Pagar</a>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white">
+    <div class="container">
+      <p class="mb-0">Derechos de autor © 2021 Tienda en línea</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS y dependencias -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Tu script personalizado (si es necesario) -->
+  <script src="app.js" defer></script>
+</body>
+
+</html>
